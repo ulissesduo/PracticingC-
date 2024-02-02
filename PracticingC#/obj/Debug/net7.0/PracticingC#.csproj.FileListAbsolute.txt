@@ -1,0 +1,15 @@
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\bin\Debug\net7.0\PracticingC#.exe
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\bin\Debug\net7.0\PracticingC#.deps.json
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\bin\Debug\net7.0\PracticingC#.runtimeconfig.json
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\bin\Debug\net7.0\PracticingC#.dll
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\bin\Debug\net7.0\PracticingC#.pdb
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.csproj.AssemblyReference.cache
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.AssemblyInfoInputs.cache
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.AssemblyInfo.cs
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.csproj.CoreCompileInputs.cache
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.dll
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\refint\PracticingC#.dll
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.pdb
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\PracticingC#.genruntimeconfig.cache
+C:\Users\uliss\source\repos\PracticingC#\PracticingC#\obj\Debug\net7.0\ref\PracticingC#.dll
