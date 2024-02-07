@@ -277,13 +277,206 @@ namespace MyApp
 
             return result.ToString();
         }
+
+        public static bool PrimeNumber(int number) 
+        {
+            if(number <= 1)
+                   return false;
+
+            for (int i = 2; i <= Math.Sqrt(number); i++) 
+            {
+                if(number % i == 0)
+                    return false;
+            }
+            return true;                      
+        }
+
+        public static string AnagramChecker(string input1, string input2) 
+        {
+            char[] characteres = input1.ToCharArray().OrderByDescending(c => c).ToArray();
+            char[] characteres2 = input2.ToCharArray().OrderByDescending(c => c).ToArray();
+
+            if (characteres.SequenceEqual(characteres2))
+            {
+                Console.WriteLine("iguais");
+            }
+            else 
+            {
+                Console.WriteLine("não é anagrama");
+            }
+
+            for (int i = 0; i < characteres.Length;i++) 
+            {
+                 Console.WriteLine(characteres[i]);                    
+            }
+            Console.WriteLine();
+            for (int i = 0; i < characteres2.Length; i++)
+            {
+                Console.WriteLine(characteres2[i]);
+            }
+            return input1;
+        }
+        public static Dictionary<string, int> LongestWord(string[] words)
+        {
+            Dictionary<string, int> counter = new Dictionary<string, int>();
+           
+            string longest = words[0];
+            foreach (string word in words)
+            {
+                int count = word.Length;
+                if (word.Length > longest.Length)
+                {
+                    longest = word;
+                }
+                counter.Add(word, count);
+            }
+            var orderedCounter = counter.OrderByDescending(pair => pair.Value)
+                            .ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            return orderedCounter;
+
+        }
+
+        static void InsertCyclically(int[] array, ref int currentIndex, int value)
+        {
+            array[currentIndex] = value;
+            currentIndex = (currentIndex + 1) % array.Length;
+        }
+        static void DisplayMenu(string[] menuItems, int currentIndex)
+        {
+            for (int i = 0; i < menuItems.Length; i++)
+            {
+                if (i == currentIndex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(">> ");
+                }
+
+                Console.WriteLine(menuItems[i]);
+
+                Console.ResetColor();
+            }
+        }
+
+        static int GetRandomNumber(Random random, int min, int max)
+        {
+            // Generate a random number within a larger range
+            int largerRangeRandom = random.Next(min, max*2);
+
+            // Use modulo to wrap the value within the desired range
+            int wrappedRandomNumber = largerRangeRandom % (max - min + 1) + min;
+
+            return wrappedRandomNumber;
+        }
+
+
+
         public static void Main(string[] args)
         {
-            string input = "aaabbccc";
-            Dictionary<char, int> charCounts = CountRepeatedChar(input);
+            //int[] array = { 1, 2, 3, 4, 5 };
+            //int currentIndex = 0;
 
-            string result = ConcatenateDictionary(charCounts);
-            Console.WriteLine(result);
+            //Console.WriteLine("Original Array:");
+
+            //foreach (int element in array)
+            //{
+            //    Console.Write(element + " ");
+            //}
+
+            //Console.WriteLine("\n\nCyclic Indexing:");
+
+            //// Access elements cyclically using modulo
+            //for (int i = 0; i < 32; i++)
+            //{
+            //    int value = array[currentIndex];
+            //    Console.Write(value + " ");
+
+            //    currentIndex = (currentIndex + 1) % array.Length;
+            //}
+            //Console.WriteLine("Enter an angle in degrees:");
+            int angle = int.Parse(Console.ReadLine());
+
+            // Wrap angle within the range 0 to 360 degrees
+            int wrappedAngle = (angle % 360 + 360) % 360;
+
+            Console.WriteLine($"Wrapped Angle: {wrappedAngle} degrees");
+
+
+            Console.WriteLine("Enter an hour:");
+            int hour = int.Parse(Console.ReadLine());
+            int parsing = (hour % 12 ) % 12;
+            Console.WriteLine(parsing);
+
+
+
+            //=================================================
+            //string[] menuItems = { "Play", "Options", "Exit" };
+            //int currentIndex = 0;
+
+            //Console.WriteLine("Circular Navigation Menu:");
+
+            //while (true)
+            //{
+            //    DisplayMenu(menuItems, currentIndex);
+
+            //    ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+            //    // Handle navigation input
+            //    if (keyInfo.Key == ConsoleKey.RightArrow)
+            //    {
+            //        currentIndex = (currentIndex + 1) % menuItems.Length;
+            //    }
+            //    else if (keyInfo.Key == ConsoleKey.LeftArrow)
+            //    {
+            //        currentIndex = (currentIndex - 1 + menuItems.Length) % menuItems.Length;
+            //    }
+            //    else if (keyInfo.Key == ConsoleKey.Enter)
+            //    {
+            //        Console.WriteLine($"\nSelected: {menuItems[currentIndex]}");
+            //        break;
+            //    }
+
+            //    Console.Clear();
+
+
+
+
+            //int minRange = 10;
+            //int maxRange = 50;
+
+            //Random random = new Random();
+
+            //Console.WriteLine($"Random Numbers in the range [{minRange}, {maxRange}]:");
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    int randomNumber = GetRandomNumber(random, minRange, maxRange);
+            //    Console.WriteLine(randomNumber);
+            //}
+
+
+
+            //char[] characters = { 'A', 'B', 'C', 'D', 'E' };
+            //int currentIndex = 0;
+
+            //Console.WriteLine("Original Array:");
+
+            //foreach (char character in characters)
+            //{
+            //    Console.Write(character + " ");
+            //}
+
+            //Console.WriteLine("\n\nCyclic Indexing:");
+
+            //// Access elements cyclically using modulo
+            //for (int i = 0; i < 110; i++)
+            //{
+            //    char currentChar = characters[currentIndex];
+            //    Console.Write(currentChar + " ");
+
+            //    currentIndex = (currentIndex + 1) % characters.Length;
+            //}
         }
+        
     }
 }
